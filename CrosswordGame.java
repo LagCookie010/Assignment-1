@@ -33,7 +33,7 @@ public static void CrosswordStart() {
 
         switch (SelectOptions) {
             case 'c':
-                
+                Generator(null);
             break;
             //
             case 'v':
@@ -67,18 +67,29 @@ public static void CrosswordStart() {
                 break;
         }
     }
+}//CrosswordStart ends
 
 
 
 
+// Crossword Generation
+public static void Generator(String[] args) {
+    int loopRow = 0;
+    int RowAmount = 0;
+    do{// add rows
+        loopRow = 0; // restart looping rows
+        do { // add nodes to row
+        System.out.print("  " + 'a');
+        loopRow++;
+        
+        } while(loopRow < 6);
+        System.out.println("");
+        RowAmount++;
+    } while (RowAmount< 6);
+}// Generator ends
 
-    
 
 
-
-
-
-}// Crossword Start ends
 
     
 }// end of CrosswordGame
