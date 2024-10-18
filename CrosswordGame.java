@@ -8,7 +8,7 @@
 
 // Imports
 import java.util.Scanner;
-
+import java.security.SecureRandom;
 
 public class CrosswordGame {
     static Scanner Input = new Scanner(System.in);
@@ -76,10 +76,16 @@ public static void CrosswordStart() {
 public static void Generator(String[] args) {
     int loopRow = 0;
     int RowAmount = 0;
+    SecureRandom random = new SecureRandom();
+    char[] randomLetters = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+
+
+
+
     do{// add rows
         loopRow = 0; // restart looping rows
         do { // add nodes to row
-        System.out.print("  " + 'a');
+        System.out.print("  " + randomLetters[random.nextInt(25)]);
         loopRow++;
         
         } while(loopRow < 6);
