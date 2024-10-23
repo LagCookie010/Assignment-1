@@ -12,6 +12,13 @@ import java.util.Scanner;
 public class Manager {
 
 
+    public static void Spacer(){
+        System.out.println("");
+        System.out.println("===+===+===+===+===+===+===+===+===+===+===+===+");
+        System.out.println("");
+    }
+
+
 
 
 

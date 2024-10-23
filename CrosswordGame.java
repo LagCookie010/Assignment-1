@@ -21,24 +21,30 @@ public static void CrosswordStart() {
 
     while (loop == true) {
 
-        
+    Manager.Spacer();
     System.out.println("Crossword Generator DL Verison");
     System.out.println("(c)reate a new Crossword puzzle");
     System.out.println("(v)iew the Crossword puzzle");
     System.out.println("(s)olutions to the last Crossword puzzle");
     System.out.println("(q)uit");
-        String StartOptions = Input.nextLine();
-        char SelectOptions = StartOptions.charAt(0);
-        SelectOptions = Character.toLowerCase(SelectOptions);
+    Manager.Spacer();
+
+    String StartOptions = Input.nextLine();
+    char SelectOptions = StartOptions.charAt(0);
+    SelectOptions = Character.toLowerCase(SelectOptions);
+
+    System.out.println("===---===---===---===");
+    System.out.println("");
 
         switch (SelectOptions) {
             case 'c':
-                Generator(null);
+                CrosswordInitalizer.CrosswordInitalizer();
             break;
             //
             case 'v':
             if (CrosswordStart == false) { // No Arrays presents
                 System.out.println("Sorry no Crossword puzzles made yet");
+                Manager.Spacer();
                 break;
             } else {// A Array is present
 
@@ -49,6 +55,8 @@ public static void CrosswordStart() {
             case 's':
             if (CrosswordStart == false) { // No Arrays presents
                 System.out.println("Sorry no Crossword puzzles made yet");
+                Manager.Spacer();
+
                 break;
             } else {// A Array is present
 
@@ -57,6 +65,7 @@ public static void CrosswordStart() {
             break;
             //
             case 'q':
+            Manager.Spacer();
             System.out.println("Closinh  Program");
                 loop = false;
             break;
@@ -64,35 +73,14 @@ public static void CrosswordStart() {
             default:
 
             System.out.println("Try Inputing again");
+            Manager.Spacer();
+
                 break;
         }
     }
 }//CrosswordStart ends
 
 
-
-
-// Crossword Generation
-public static void Generator(String[] args) {
-    int loopRow = 0;
-    int RowAmount = 0;
-    SecureRandom random = new SecureRandom();
-    char[] randomLetters = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
-
-
-
-
-    do{// add rows
-        loopRow = 0; // restart looping rows
-        do { // add nodes to row
-        System.out.print("  " + randomLetters[random.nextInt(25)]);
-        loopRow++;
-        
-        } while(loopRow < 6);
-        System.out.println("");
-        RowAmount++;
-    } while (RowAmount< 6);
-}// Generator ends
 
 
 
